@@ -9,13 +9,21 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
+use think\Route;
+
+Route::rule('hello/:name','index/Index/hello','POST/GET');
+Route::rule('user/:id','frontend/Index/index');
+
+
 return [
     '__pattern__' => [
         'name' => '\w+',
     ],
-    '[hello]'     => [
-        ':id'   => ['index/hello', ['method' => 'get'], ['id' => '\d+']],
-        ':name' => ['index/hello', ['method' => 'post']],
+    '[news]'     => [
+        ':id'   => ['index/Index', ['method' => 'get'], ['id' => '\d+']],
     ],
+    '[old]'     => [
+        ':id'   => ['backend/Index/hello', ['method' => 'get'], ['id' => '\d+']],
+    ]
 
 ];
