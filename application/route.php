@@ -13,6 +13,7 @@ use think\Route;
 
 Route::rule('hello/:name','index/Index/hello','POST/GET');
 Route::rule('user/:id','frontend/Index/index');
+Route::rule('/','index/Index/index');//指定默认首页
 
 
 return [
